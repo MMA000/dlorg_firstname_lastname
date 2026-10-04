@@ -1,0 +1,7 @@
+# Ignoring VIM swap file
+*.swp
+*.swo
+*.swn
+
+# Ignoring VIM backup files
+*~
