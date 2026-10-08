@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-mkdir documents images audio other
-mkdir documents/project1 documents/project2 documents/project3
+mkdir documents images videos audio other
+mkdir documents/docs documents/pdf documents/text documents/project1 documents/project2 documents/project3
 
 for file in *; do
-    if [ "$file" = "documents" ] || [ "$file" = "images" ] || [ "$file" = "audio" ] || [ "$file" = "other" ] || [ "$file" = "project1" ] || [ "$file" = "project2" ] || [ "$file" = "project3" ]; then
+    if [ "$file" = "documents" ] || [ "$file" = "images" ] || [ "$file" = "videos" ] || [ "$file" = "audio" ] || [ "$file" = "other" ]; then
         continue
     fi
 
@@ -13,27 +13,42 @@ for file in *; do
         continue
     fi
 
+    if [[ "$file" == *project1* ]]; then
+        mv "$file" documents/project1/
+        continue
+    elif [[ "$file" == *project2* ]]; then
+        mv "$file" documents/project2/
+        continue
+    elif [[ "$file" == *project3* ]]; then
+        mv "$file" documents/project3/
+        continue
+    fi
+
     case "$file" in
-        *.jpg|*jpeg|*.png|*.gif|*.b,p|*.svg)
+        *.jpg|*.jpeg|*.png|*.gif|*.bmp|*.svg)
             mv "$file" images/
             ;;
 
-        *.mp3|.wav|*.ogg|*.flac)
+        *.mp4|*.mkv|*.mov)
+            mv "$file" videos/
+            ;;
+
+        *.mp3|*.wav|*.ogg|*.flac)
             mv "$file" audio/
             ;;
         
-        *.pdf|*.doc|*.docx|*.odt|*.xls|*.xlsx|*.ppt|*.pptx|*.txt)
-            if [[ "$file" == *project1* ]]; then
-                mv "$file" documents/project1
-            elif [[ "$file" == *project2* ]]; then
-                mv "$file" documents/project2
-            elif [[ "$file" == *project3* ]]; then
-                mv "$file" documents/project3
-            else 
-                mv "$file" documents
-            fi
+        *.pdf)
+            mv "$file" documents/pdf/
             ;;
-    
+
+        *.doc|*.docx|*.odt|*.xls|*.xlsx|*.ppt|*.pptx)
+            mv "$file" documents/docs/
+            ;;
+
+        *.txt)
+            mv "$file" documents/text/
+            ;;
+ 
         *)
             mv "$file" other/
             ;;
