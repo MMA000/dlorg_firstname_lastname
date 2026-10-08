@@ -1,3 +1,43 @@
 #!/usr/bin/env bash
 
+mkdir documents images audio other
+mkdir documents/project1 documents/project2 documents/project3
 
+for file in *; do
+    if [ "$file" = "documents" ] || [ "$file" = "images" ] || [ "$file" = "audio" ] || [ "$file" = "other" ] || [ "$file" = "project1" ] || [ "$file" = "project2" ] || [ "$file" = "project3" ]; then
+        continue
+    fi
+
+    if [ -d "$file" ]; then
+        mv "$file" other/
+        continue
+    fi
+
+    case "$file" in
+        *.jpg|*jpeg|*.png|*.gif|*.b,p|*.svg)
+            mv "$file" images/
+            ;;
+
+        *.mp3|.wav|*.ogg|*.flac)
+            mv "$file" audio/
+            ;;
+        
+        *.pdf|*.doc|*.docx|*.odt|*.xls|*.xlsx|*.ppt|*.pptx|*.txt)
+            if [[ "$file" == *project1* ]]; then
+                mv "$file" documents/project1
+            elif [[ "$file" == *project2* ]]; then
+                mv "$file" documents/project2
+            elif [[ "$file" == *project3* ]]; then
+                mv "$file" documents/project3
+            else 
+                mv "$file" documents
+            fi
+            ;;
+    
+        *)
+            mv "$file" other/
+            ;;
+    esac
+done 
+    
+    
