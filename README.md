@@ -12,7 +12,8 @@ folders. It runs in the background and organizes files based on their type.
 ## Installation
 1. Clone the project:
     git clone https://github.com/MMA000/dlorg_firstname_lastname.git
-    cd dlorg
+    
+    cd dlorg_firstname_lastname
 
 2. Make the script executable:
     chmod +x dlorg
