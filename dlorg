@@ -43,7 +43,7 @@ inotifywait -mr "$WATCHDIR" -e create -e moved_to -e close_write | while read -r
             ;;
 
         *.mp4|*.mkv|*.mov)
-            ¨mkdir -p videos
+            mkdir -p videos
             mv "$file" videos/
             ;;
 
