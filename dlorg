@@ -23,42 +23,52 @@ inotifywait -mr "$WATCHDIR" -e create -e moved_to -e close_write | while read -r
     fi
 
     if [[ "$file" == *project1* ]]; then
+        mkdir -p documents/project1
         mv "$file" documents/project1/
         continue
     elif [[ "$file" == *project2* ]]; then
+        mkdir -p documents/project2
         mv "$file" documents/project2/
         continue
     elif [[ "$file" == *project3* ]]; then
+        mkdir -p documents/project3
         mv "$file" documents/project3/
         continue
     fi
 
     case "$file" in
         *.jpg|*.jpeg|*.png|*.gif|*.bmp|*.svg)
+            mkdir -p images
             mv "$file" images/
             ;;
 
         *.mp4|*.mkv|*.mov)
+            ¨mkdir -p videos
             mv "$file" videos/
             ;;
 
         *.mp3|*.wav|*.ogg|*.flac)
+            mkdir -p audio
             mv "$file" audio/
             ;;
         
         *.pdf)
+            mkdir -p documents/pdf
             mv "$file" documents/pdf/
             ;;
 
         *.doc|*.docx|*.odt|*.xls|*.xlsx|*.ppt|*.pptx)
+            mkdir -p documents/docs
             mv "$file" documents/docs/
             ;;
 
         *.txt)
+            mkdir -p documents/text
             mv "$file" documents/text/
             ;;
  
         *)
+            mkdir -p other
             mv "$file" other/
             ;;
     esac
