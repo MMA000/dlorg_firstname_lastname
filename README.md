@@ -5,7 +5,7 @@ folders. It runs in the background and organizes files based on their type.
 
 ## What it does
 - Watches ~/Downloads in real time
-- Moves new files into Documents, Images, Videos or Other
+- Moves new files into Documents, Images, Videos, Audio or Other
 - Runs as a systemd user service
 - Starts automatically on login
 
