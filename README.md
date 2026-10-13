@@ -35,12 +35,12 @@ dlorg creates these folders inside ~/Downloads and moves files based on
 their extension:
 
 - Documents/
-    pdf/        – PDF files
-    docs/       – doc, docx, odt, xls, xlsx, ppt, pptx
-    text/       – txt files
-    project1/   – filenames containing "project1"
-    project2/   – filenames containing "project2"
-    project3/   – filenames containing "project3"
+    -    pdf/        – PDF files
+    -    docs/       – doc, docx, odt, xls, xlsx, ppt, pptx
+    -    text/       – txt files
+    -    project1/   – filenames containing "project1"
+    -    project2/   – filenames containing "project2"
+    -    project3/   – filenames containing "project3"
 
 - Images/       – jpg, jpeg, png, gif, bmp, svg
 - Videos/       – mp4, mkv, mov
