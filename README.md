@@ -32,7 +32,7 @@ folders. It runs in the background and organizes files based on their type.
 ## Folder structure
 
 dlorg creates these folders inside ~/Downloads and moves files based on
-their extension:
+their extension or filename:
 
 - Documents/
     -    pdf/        – PDF files
