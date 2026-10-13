@@ -34,7 +34,7 @@ folders. It runs in the background and organizes files based on their type.
 dlorg creates these folders inside ~/Downloads and moves files based on
 their extension:
 
-Documents/
+- Documents/
     pdf/        – PDF files
     docs/       – doc, docx, odt, xls, xlsx, ppt, pptx
     text/       – txt files
@@ -42,10 +42,10 @@ Documents/
     project2/   – filenames containing "project2"
     project3/   – filenames containing "project3"
 
-Images/         – jpg, jpeg, png, gif, bmp, svg
-Videos/         – mp4, mkv, mov
-Audio/          – mp3, wav, ogg, flac
-Other/          – directories and uncategorized files
+- Images/       – jpg, jpeg, png, gif, bmp, svg
+- Videos/       – mp4, mkv, mov
+- Audio/        – mp3, wav, ogg, flac
+- Other/        – directories and uncategorized files
 
 ## Screenshots
 
